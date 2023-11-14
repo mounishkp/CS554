@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Build Docker image
-docker buildx build -t mad-mike-automobile .
+docker buildx build -t vehicle-ui .
 
-docker stop mad-mike-automobile-container
-docker rm mad-mike-automobile-container
+docker stop vehicle-ui
+docker rm vehicle-ui
 
 # Run Docker container
-docker run --name mad-mike-automobile-container -it -d -p 3000:3000 mad-mike-automobile
+docker run --name ui -it -d -p 3000:3000 vehicle-ui

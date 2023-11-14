@@ -9,23 +9,23 @@ services:
     environment:
       - MONGODB_CONTAINER_NAME=mongodb
 
-  automobile:
+  vehicle:
     build: ./app
-    container_name: automobile
+    container_name: vehicle
     ports:
       - 8000:8000
     depends_on:
       - mongodb
     environment:
       - MONGODB_CONTAINER_NAME=mongodb
-      - REACT_APP_AUTOMOBILE_CONTAINER_NAME=automobile
+      - REACT_APP_AUTOMOBILE_CONTAINER_NAME=vehicle
 
   mikereact:
-    build: ./react
-    container_name: mike-react
+    build: ./ui
+    container_name: react
     ports:
       - 3000:3000
     depends_on:
-      - automobile
+      - vehicle
     environment:
-      - REACT_APP_AUTOMOBILE_CONTAINER_NAME=automobile
+      - REACT_APP_AUTOMOBILE_CONTAINER_NAME=vehicle

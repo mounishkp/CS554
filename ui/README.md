@@ -1,4 +1,4 @@
-# Getting Started with Automobile React App
+# Getting Started with Vehicle React App
 
 ## Available Scripts
 
